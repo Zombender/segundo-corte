@@ -1,0 +1,9 @@
+# application.properties configuration
+
+```
+spring.datasource.url=jdbc:postgresql://localhost:5432/tecnouam
+spring.datasource.username=zombender
+spring.datasource.password=1234
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true
+```
