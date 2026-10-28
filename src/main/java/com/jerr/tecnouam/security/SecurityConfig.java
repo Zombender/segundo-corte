@@ -85,6 +85,8 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthenticationConverter converter) throws Exception {
         return http
+                // La API usa JWT Bearer sin cookies de sesion, incluido el login JSON de React.
+                .csrf(csrf -> csrf.ignoringRequestMatchers("/api/**"))
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth

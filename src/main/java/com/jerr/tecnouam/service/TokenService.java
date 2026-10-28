@@ -33,7 +33,7 @@ public class TokenService {
                 .toList();
 
         JwtClaimsSet claims = JwtClaimsSet.builder()
-                .issuer("nicamarket-laboratorio")
+                .issuer("tecnouam")
                 .issuedAt(ahora)
                 .expiresAt(ahora.plus(30, ChronoUnit.MINUTES))
                 .subject(auth.getName())

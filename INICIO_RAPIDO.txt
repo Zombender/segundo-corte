@@ -1,0 +1,33 @@
+﻿TECNO UAM - INICIO RAPIDO
+
+1) Inicia PostgreSQL y verifica que exista la base tecnouam.
+   application.properties utiliza postgres / 123 en localhost:5432.
+
+2) En tu IDE, configura JWT_SECRET_BASE64 en las variables de entorno
+   de TecnouamApplication. Debe ser una clave de al menos 32 bytes
+   codificada en Base64. Ejecuta esa clase normalmente.
+   No se necesita un script de arranque ni variables de contrasenas.
+
+   Si prefieres Maven desde una terminal, el README contiene los comandos
+   para generar la clave y ejecutar .\mvnw.cmd spring-boot:run.
+
+3) Espera: Started TecnouamApplication
+   API: http://localhost:8080
+
+4) En otra terminal:
+   cd frontend
+   npm ci
+   npm run dev
+   Abre: http://127.0.0.1:5173
+
+5) Cuentas originales:
+   admin / Admin123! (ADMIN)
+   user  / User123!  (USER)
+
+6) Postman: configura baseUrl=http://localhost:8080 y las cuentas
+   anteriores en las variables de la coleccion. Ejecuta ambos logins.
+   Crea equipos con ADMIN y pulsa Actualizar equipos en el frontend.
+
+AVISO: ddl-auto=create recrea las tablas en cada arranque y borra
+los registros anteriores. Los JWT duran 30 minutos; si cambias la clave
+JWT_SECRET_BASE64, inicia sesion nuevamente.
